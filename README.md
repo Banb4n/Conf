@@ -12,3 +12,6 @@ Some personal config files
   
 # VS-Code
  - theme: `Atom material theme`
+
+# Javascript 
+ - `expo`
