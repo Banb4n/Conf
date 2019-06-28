@@ -1,0 +1,71 @@
+{
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.eslintIntegration": true,
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#00BCD4",
+        "list.activeSelectionForeground": "#00BCD4",
+        "list.inactiveSelectionForeground": "#00BCD4",
+        "list.highlightForeground": "#00BCD4",
+        "scrollbarSlider.activeBackground": "#00BCD450",
+        "editorSuggestWidget.highlightForeground": "#00BCD4",
+        "textLink.foreground": "#00BCD4",
+        "progressBar.background": "#00BCD4",
+        "pickerGroup.foreground": "#00BCD4",
+        "tab.activeBorder": "#00BCD4",
+        "notificationLink.foreground": "#00BCD4"
+    },
+    "materialTheme.cache.workbench.settings": {
+        "accent": "Cyan",
+        "accentPrevious": "Tomato"
+    },
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+        "**/flow-typed": true
+    },
+    "explorer.decorations.badges": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "materialTheme.fixIconsRunning": false,
+    "editor.formatOnSave": false,
+    "javascript.format.enable": false,
+    "javascript.validate.enable": false,
+    "flow.useNPMPackagedFlow": true,
+    "workbench.colorTheme": "Atom Material Theme",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "eslint.autoFixOnSave": true,
+    "search.smartCase": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.idea": true,
+        "**/.cache": true
+    },
+    "editor.scrollBeyondLastLine": false,
+    "workbench.tree.horizontalScrolling": true,
+    "editor.smoothScrolling": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "workbench.activityBar.visible": true,
+    "editor.fontWeight": "500",
+    "explorer.confirmDelete": false,
+    "workbench.editor.showTabs": true,
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": true,
+    "search.usePCRE2": true,
+    "breadcrumbs.enabled": true,
+    "search.useLegacySearch": true,
+    "search.showLineNumbers": true,
+    "flow.enabled": false,
+
+    // typescript
+    "typescript.tsc.autoDetect": "off" // https://stackoverflow.com/questions/50432556/cannot-use-jsx-unless-the-jsx-flag-is-provided 
+}
