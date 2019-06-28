@@ -10,3 +10,5 @@ Some personal config files
 # Git
  - `icdiff`
   
+# VS-Code
+ - theme: `Atom material theme`
