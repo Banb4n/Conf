@@ -1,0 +1,39 @@
+# This is Git's per-user configuration file.
+[alias]
+    st = status
+    ci = commit
+    ciam = commit --amend
+    co = checkout
+    di = icdiff
+
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    lg2 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+[color]
+    ui = auto
+    diff = auto
+    log = auto
+    branch = auto
+
+[push]
+    default = simple
+
+[rerere]
+    enabled = true
+    enable = true
+
+[core]
+    pager = less -F -X
+    ignorecase = false
+	excludesfile = /Users/albansuchaire/.gitignore_global
+
+[user]
+    name = Banb4n
+    email = alban.such@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[icdiff]
+	options = --highlight --line-numbers
