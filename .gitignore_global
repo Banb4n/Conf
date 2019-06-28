@@ -1,0 +1,10 @@
+# InteliJ #
+.idea
+
+# Vscode #
+jsconfig.json
+
+# Firebase #
+.firebase/
+
+# Others #
