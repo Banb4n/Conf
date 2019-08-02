@@ -1,33 +1,115 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/albansuchaire/.oh-my-zsh
+export ZSH="/Users/banban/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# ------------------ User configuration ------------------ #
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# z util
+source /usr/local/etc/profile.d/z.sh
+
+#thefuck alias
+eval $(thefuck -y --alias fuck)
+
+# Common alias
+alias l="ls -lrtah"
+alias rezsh="source ~/.zshrc"
+alias editconf="code ~/.zshrc"
+alias conf="cat ~/.zshrc"
+alias dc="docker-compose"
+alias work="cd ~/Dev"
+alias clean-docker="sh ~/Dev/clean_docker.sh"
+
+# Wavy aliases
+alias wavy="cd ~/Dev/wavy"
+alias stack="cd ~/Dev/wavy/stack"
+alias renderer="cd ~/Dev/wavy/stack/renderer"
+alias backoffice="cd ~/Dev/wavy/stack/backoffice"
+alias x="cd ~/Dev/wavy/stack/x"
+alias api="cd ~/Dev/wavy/stack/api"
+
+alias renderer-up="cd ~/Dev/wavy/stack/renderer && dc up renderer"
+alias backoffice-up="cd ~/Dev/wavy/stack/backoffice && dc up backoffice"
+alias api-up="cd ~/Dev/wavy/stack/api && dc up api_web"
+alias backoffice-up-l="cd ~/Dev/wavy/stack/backoffice && BABEL_ENV=production NO_UGLIFY=1 yarn watch:dev"
+
+# power9k setting
+POWERLEVEL9K_MODE='nerdfont-complete'
+# Please only use this battery segment if you have material icons in your nerd font (or font)
+# Otherwise, use the font awesome one in "User Segments"
+# Customise the Powerlevel9k prompts
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  custom_apple dir vcs newline status
+)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# Add the custom Aplle icon prompt segment
+POWERLEVEL9K_CUSTOM_APPLE="echo -n $'\ue711'"
+POWERLEVEL9K_CUSTOM_APPLE_BACKGROUND="black"
+POWERLEVEL9K_CUSTOM_APPLE_FOREGROUND="white"
+
+
+
+# ------------------ Default oh-my-zsh ------------------ #
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -48,95 +130,11 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# myConfig
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# z util
-source /usr/local/etc/profile.d/z.sh
-
-export PATH=./node_modules/.bin:$PATH
-
-#thefuck alias
-eval $(thefuck -y --alias fuck)
-
-# Common alias
-alias l="ls -lrtah"
-
-# Gitbook alias
-alias o-gb="cd ~/Dev/gitbook/gitbook-new"
-alias run-gb="cd ~/Dev/gitbook/gitbook-new && yarn start"
-alias i-gb="cd ~/Dev/gitbook/gitbook-new && yarn && yarn start"
-
-# Work alias
-alias latourdepizz="cd ~/Dev/LaboWeb/latourdepizz"
-alias runlatourdepizz="cd ~/Dev/LaboWeb/latourdepizz && yarn start"
-alias work="cd ~/Dev"
-
-# Config alias
-alias myconf="cat ~/.zshrc"
-alias editconf="vim ~/.zshrc"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-# power9k setting
-POWERLEVEL9K_MODE='nerdfont-complete'
-# Please only use this battery segment if you have material icons in your nerd font (or font)
-# Otherwise, use the font awesome one in "User Segments"
-# Customise the Powerlevel9k prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_apple dir vcs newline status
-)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-# Add the custom Aplle icon prompt segment
-POWERLEVEL9K_CUSTOM_APPLE="echo -n $'\ue711'"
-POWERLEVEL9K_CUSTOM_APPLE_BACKGROUND="black"
-POWERLEVEL9K_CUSTOM_APPLE_FOREGROUND="white"
